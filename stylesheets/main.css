@@ -135,7 +135,7 @@ legend {
 
 label {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 0;
   transform: translateX(-20%) translateY(-50%);
   background: rgba(26, 37, 48, 0.5);
@@ -181,6 +181,7 @@ textarea:focus {
 [type="email"]:focus + label,
 textarea:focus + label {
   background: #2980b9;
+  top: 0;
 }
 
 [type="submit"] {
