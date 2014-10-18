@@ -40,9 +40,9 @@ label {
 	@extend %transition;
 	@extend %corners;
 	position: absolute;
-	top: 50%;
+	top: 0;
 	left: 0;
-	transform: translateX(-20%) translateY(-50%);
+	transform: translateX(-20%) translateY(50%);
 	background: rgba( $darker , 0.5 );
 	border: 1px solid rgba( $primary , 0.5 );
 	padding: 0 1em 0.2em;
@@ -50,11 +50,6 @@ label {
 	cursor: pointer;
 	-webkit-transform-origin: 0 0;
 	transform-origin: 0 0;
-
-	@media screen and ( max-width: $mobile ) {
-		top: 0;
-		transform: translateX(-20%) translateY(50%);
-	}
 }
 
 input,
@@ -70,7 +65,7 @@ textarea {
 
 		+ label {
 			background: $primary;
-			transform: translateX(-115%) translateY(-50%);
+			transform: translateX(-20%) translateY(-50%);
 		}
 	}
 
@@ -95,17 +90,13 @@ textarea  {
 	background: inherit;
 	color: $bright;
 	border: 1px solid rgba( $primary , 0.3 );
-	padding: 0.5em;
+	padding: 1em 0.5em 0.5em;
 	width: 100%;
 
 	-webkit-filter: blur(5px);
 
 	&:focus {
 		-webkit-filter: blur(0px);
-	}
-
-	@media screen and ( max-width: $mobile ) {
-		padding: 1em 0.5em 0.5em;
 	}
 
 }

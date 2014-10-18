@@ -135,9 +135,9 @@ legend {
 
 label {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateX(-20%) translateY(-50%);
+  transform: translateX(-20%) translateY(50%);
   background: rgba(26, 37, 48, 0.5);
   border: 1px solid rgba(41, 128, 185, 0.5);
   padding: 0 1em 0.2em;
@@ -145,12 +145,6 @@ label {
   cursor: pointer;
   -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
-}
-@media screen and (max-width: 800px) {
-  label {
-    top: 0;
-    transform: translateX(-20%) translateY(50%);
-  }
 }
 
 input,
@@ -167,7 +161,7 @@ textarea:focus {
 input:focus + label,
 textarea:focus + label {
   background: #2980b9;
-  transform: translateX(-115%) translateY(-50%);
+  transform: translateX(-20%) translateY(-50%);
 }
 @media screen and (max-width: 800px) {
   input:focus + label,
@@ -187,7 +181,7 @@ textarea {
   background: inherit;
   color: #94bfdc;
   border: 1px solid rgba(41, 128, 185, 0.3);
-  padding: 0.5em;
+  padding: 1em 0.5em 0.5em;
   width: 100%;
   -webkit-filter: blur(5px);
 }
@@ -195,13 +189,6 @@ textarea {
 [type="email"]:focus,
 textarea:focus {
   -webkit-filter: blur(0px);
-}
-@media screen and (max-width: 800px) {
-  [type="text"],
-  [type="email"],
-  textarea {
-    padding: 1em 0.5em 0.5em;
-  }
 }
 
 [type="submit"] {
