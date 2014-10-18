@@ -1,0 +1,125 @@
+@import "compass/reset";
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400,700);
+@import "settings";
+
+* {
+	position: relative;
+	box-sizing: border-box;
+}
+
+html , body { height: 100%; }
+
+*,
+body {
+	font-family: 'Inconsolata', sans-serif ;
+	font-weight: 400;
+}
+
+body {
+	font-size: 19px;
+	line-height: 1.3em;
+	background: -webkit-linear-gradient( right , darken( $dark , 1% ) , $dark );
+	color: $bright;
+}
+
+p {
+	@extend %component;
+	margin-bottom: 1em;
+}
+
+form {
+	@extend %component;
+}
+
+legend {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	color: $primary;
+}
+
+label {
+	@extend %transition;
+	@extend %corners;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateX(-20%) translateY(-50%);
+	background: rgba( $darker , 0.5 );
+	border: 1px solid rgba( $primary , 0.5 );
+	padding: 0 1em 0.2em;
+	display: block;
+	cursor: pointer;
+}
+
+input,
+textarea {
+	@extend %transition;
+	font-size: 100%;
+
+	&:focus {
+		outline: none;
+		border: 1px solid $primary;
+		background: $darker;
+		box-shadow: inset 3px 3px 10px 0 rgba( black , 0.1);
+	}
+}
+
+::-webkit-input-placeholder { 
+	color: rgba( $primary , 0.3 );
+}
+
+[type="text"],
+[type="email"],
+textarea  {
+	@extend %corners;
+	border: none;
+	background: inherit;
+	color: $bright;
+	border: 1px solid rgba( $primary , 0.3 );
+	padding: 1em 0.5em 0.5em;
+	width: 100%;
+
+	-webkit-filter: blur(5px);
+
+	&:focus {
+		-webkit-filter: blur(0px);
+
+		+ label {
+			background: $primary;
+		}
+	}
+}
+
+[type="submit"] {
+	@extend %corners;
+	@extend %button;
+	color: $nephritis;
+	border: 1px solid rgba( $primary , 0.3 );
+	font-size: 90%;
+
+	&:focus {
+		background: $peterriver;
+		color: $brighter;
+	}
+
+	&:hover {
+		background: $nephritis ;
+		color: $brighter;
+	}
+
+	&:active {
+		background: $darker ;
+		color: $brighter;
+	}
+
+}
+
+.control {
+	margin-bottom: 1em;
+}
+
+.stage {
+	@extend %center-stage;
+	max-width: 500px;
+	width: 80%;
+}

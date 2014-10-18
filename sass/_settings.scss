@@ -1,0 +1,64 @@
+//colors
+$pomegranate: #c0392b;
+$midnightblue: #2c3e50;
+$belizehole: #2980b9;
+$nephritis: #27ae60;
+$peterriver: #3498db;
+
+$primary: $belizehole;
+$secondary: $midnightblue;
+
+$bright: mix( $primary , white , 50% );
+$brighter: mix( $primary , white , 0% );
+$dark: mix( $secondary , black , 70% );
+$darker: mix( $secondary , black , 60% );
+
+%center-stage {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+%corners {
+	border-radius: 5px;
+}
+
+%component {
+	border-radius: 5px;
+	background: -webkit-linear-gradient( left , darken( $darker , 1% ) , $darker );
+	box-shadow: inset 3px 3px 15px -5px rgba( black , 0.1 );
+	padding: 2em;
+	display: block;
+}
+
+%button {
+	border: none;
+	background: $darker;
+	color: $primary;
+	display: inline-block;
+	padding: 0.3em 1em 0.5em;
+	cursor: pointer;
+	background: -webkit-linear-gradient( left , darken( $darker , 1% ) , $darker );
+	box-shadow: inset 3px 3px 15px -5px rgba( black , 0.1 );
+	text-transform: uppercase;
+
+	&:hover {
+		background: $pomegranate;
+		color: $brighter;
+	}
+
+}
+
+%shadow-inset {
+	box-shadow: inset 3px 3px 10px rgba( black , 0.1 );
+}
+
+%transition {
+	transition: all 0.2s ease-out;
+
+	&:hover {
+		transition: all 0.2s ease-in;
+	}
+
+}
