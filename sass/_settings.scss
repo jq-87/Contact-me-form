@@ -13,6 +13,9 @@ $brighter: mix( $primary , white , 0% );
 $dark: mix( $secondary , black , 70% );
 $darker: mix( $secondary , black , 60% );
 
+//breakpoints
+$mobile: 800px;
+
 %center-stage {
 	position: absolute;
 	top: 50%;

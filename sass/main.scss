@@ -8,7 +8,6 @@
 }
 
 html , body { height: 100%; }
-
 *,
 body {
 	font-family: 'Inconsolata', sans-serif ;
@@ -49,6 +48,13 @@ label {
 	padding: 0 1em 0.2em;
 	display: block;
 	cursor: pointer;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+
+	@media screen and ( max-width: $mobile ) {
+		top: 0;
+		transform: translateX(-20%) translateY(50%);
+	}
 }
 
 input,
@@ -61,6 +67,19 @@ textarea {
 		border: 1px solid $primary;
 		background: $darker;
 		box-shadow: inset 3px 3px 10px 0 rgba( black , 0.1);
+
+		+ label {
+			background: $primary;
+			transform: translateX(-115%) translateY(-50%);
+		}
+	}
+
+	@media screen and ( max-width: $mobile ) {
+		&:focus {
+			+ label {
+				transform: translateX(-20%) translateY(-50%);
+			}
+		}
 	}
 }
 
@@ -76,19 +95,19 @@ textarea  {
 	background: inherit;
 	color: $bright;
 	border: 1px solid rgba( $primary , 0.3 );
-	padding: 1em 0.5em 0.5em;
+	padding: 0.5em;
 	width: 100%;
 
 	-webkit-filter: blur(5px);
 
 	&:focus {
 		-webkit-filter: blur(0px);
-
-		+ label {
-			background: $primary;
-			top: 0;
-		}
 	}
+
+	@media screen and ( max-width: $mobile ) {
+		padding: 1em 0.5em 0.5em;
+	}
+
 }
 
 [type="submit"] {

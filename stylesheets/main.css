@@ -143,6 +143,14 @@ label {
   padding: 0 1em 0.2em;
   display: block;
   cursor: pointer;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+@media screen and (max-width: 800px) {
+  label {
+    top: 0;
+    transform: translateX(-20%) translateY(50%);
+  }
 }
 
 input,
@@ -156,6 +164,17 @@ textarea:focus {
   background: #1a2530;
   box-shadow: inset 3px 3px 10px 0 rgba(0, 0, 0, 0.1);
 }
+input:focus + label,
+textarea:focus + label {
+  background: #2980b9;
+  transform: translateX(-115%) translateY(-50%);
+}
+@media screen and (max-width: 800px) {
+  input:focus + label,
+  textarea:focus + label {
+    transform: translateX(-20%) translateY(-50%);
+  }
+}
 
 ::-webkit-input-placeholder {
   color: rgba(41, 128, 185, 0.3);
@@ -168,7 +187,7 @@ textarea {
   background: inherit;
   color: #94bfdc;
   border: 1px solid rgba(41, 128, 185, 0.3);
-  padding: 1em 0.5em 0.5em;
+  padding: 0.5em;
   width: 100%;
   -webkit-filter: blur(5px);
 }
@@ -177,11 +196,12 @@ textarea {
 textarea:focus {
   -webkit-filter: blur(0px);
 }
-[type="text"]:focus + label,
-[type="email"]:focus + label,
-textarea:focus + label {
-  background: #2980b9;
-  top: 0;
+@media screen and (max-width: 800px) {
+  [type="text"],
+  [type="email"],
+  textarea {
+    padding: 1em 0.5em 0.5em;
+  }
 }
 
 [type="submit"] {
