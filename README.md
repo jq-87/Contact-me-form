@@ -1,2 +1,2 @@
 #Fancy form
-prototyping concepts for a (contact) form
+prototyping for a (contact) form
